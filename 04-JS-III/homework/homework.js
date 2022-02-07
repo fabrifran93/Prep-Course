@@ -129,7 +129,13 @@ function multiplicarArgumentos() {
 function cuentoElementos(arreglo){
   //Realiza una función que retorne la cantidad de los elementos del arreglo cuyo valor es mayor a 18.
   //Escribe tu código aquí
-
+  var contador = 0;
+  for (let i = 0; i < arreglo.length; i++) {
+    if (arreglo[i]>18){
+      contador = contador + 1;
+    }
+  }
+  return contador
 }
 
 
@@ -151,7 +157,12 @@ function empiezaConNueve(n) {
   //Desarrolle una función que recibe como parámetro un número entero n. Debe retornar true si el entero 
   //inicia con 9 y false en otro caso.
   //Escribe tu código aquí
-   
+   var nStr = n.toString()
+   if(nStr[0]== 9) {
+     return true
+   } else{
+      return false
+   }
   } 
   
 
@@ -160,6 +171,13 @@ function todosIguales(arreglo) {
   //Escriba la función todosIguales, que indique si todos los elementos de un arreglo son iguales:
   //retornar true, caso contrario retornar false.
   //Escribe tu código aquí  
+  for(var i = 0; i < arreglo.length -1 ; i++){
+    if (arreglo[i] !== arreglo [i+1]){
+      return false
+    } else {
+      return true
+    }
+  }
   
 } 
 
@@ -169,19 +187,35 @@ function mesesDelAño(array) {
   // "Enero", "Marzo" y "Noviembre", guardarlo en nuevo array y retornarlo.
   //Si alguno de los meses no está, devolver: "No se encontraron los meses pedidos"
   // Tu código:
-  if (array.includes('Enero', 'Marzo', 'Noviembre')){
-    var array1 = ['Enero', 'Marzo', 'Noviembre']
-    return array1
-  } else {
+
+  var meses=[]
+  for (var i=0;i<array.length;i++) {
+    if (array[i]=== 'Enero' || array[i] === 'Marzo' || array[i] === 'Noviembre'){
+      meses.push(array[i]);
+    }
+  }
+
+  if(meses.length < 3){
     return 'No se encontraron los meses pedidos'
+  } else {
+    return meses;
   }
 }
+
 
 
 function mayorACien(array) {
   //La función recibe un array con enteros entre 0 y 200. Recorrer el array y guardar en un nuevo array sólo los
   //valores mayores a 100 (no incluye el 100). Finalmente devolver el nuevo array.
   // Tu código:
+  var arrayCien =[]
+
+  for (i=0;i<array.length;i++) {
+    if (array[i] > 100){
+      arrayCien.push(array[i]);
+    }
+  }
+  return arrayCien
 }
 
 
@@ -193,6 +227,21 @@ function breakStatement(numero) {
   //devolver: "Se interrumpió la ejecución"
   //Pista: usá el statement 'break'
   // Tu código:
+  var arr = [ ]
+  var suma = numero
+  for (var i = 0; i <10; i++){
+    suma = suma + 2;
+    if(suma === i) break 
+    else {
+      arr.push(suma);
+    }
+    
+  }
+  if (i<10){
+    return 'Se interrumpió la ejecución'
+  } else{
+    return arr
+  }
 }
 
 
@@ -203,6 +252,17 @@ function continueStatement(numero) {
   //Cuando el número de iteraciones alcance el valor 5, no se suma en ese caso y se continua con la siguiente iteración
   //Pista: usá el statement 'continue'
   // Tu código:
+  var arr = []
+  var suma = numero
+  for (var i = 0; i <10; i++){
+    if(i == 5) continue
+    else {
+      suma = suma + 2;
+    arr.push(suma);
+    }
+
+  }
+  return arr
 }
 
 
