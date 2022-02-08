@@ -1,4 +1,10 @@
+var persona = {
+    nombre: 'Fabri',
+    saludo: function(){
+        console.log('Hola, ' + this.nombre)
+    }
+}
 
+persona.nombre = 'Fabrizio',
 
-function validar(obj) {
-    
+console.log(persona.saludo)
